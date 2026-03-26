@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Social Blog — Pavan Choudary" />
+  <title>Social | Pavan Choudary</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lato:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5 CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+  />
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- =====================================================
+       NAVBAR
+       ===================================================== -->
+  <nav class="site-navbar navbar navbar-expand-lg">
+    <div class="container-fluid">
+
+      <!-- Logo -->
+      <a class="navbar-brand" href="index.html">
+        <img
+          src="imgs/logo.png"
+          alt="Pavan Choudary"
+          height="36"
+          style="display:inline-block; vertical-align:middle;"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"
+        />
+        <span style="display:none;">Pavan Choudary</span>
+      </a>
+
+      <!-- Mobile toggle -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNav"
+        aria-controls="mainNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Nav links -->
+      <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+        <ul class="navbar-nav align-items-lg-center">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+
+          <!-- BLOG dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Blog
+            </a>
+            <ul class="dropdown-menu site-dropdown">
+              <li><a class="dropdown-item" href="blog-social.html">Social</a></li>
+              <li><a class="dropdown-item" href="#">Political</a></li>
+              <li><a class="dropdown-item" href="#">Spiritual</a></li>
+            </ul>
+          </li>
+
+          <!-- BOOKS dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Books
+            </a>
+            <ul class="dropdown-menu site-dropdown">
+              <li><a class="dropdown-item" href="book-social.html">Social</a></li>
+              <li><a class="dropdown-item" href="#">Political</a></li>
+              <li><a class="dropdown-item" href="#">Spiritual</a></li>
+              <li><a class="dropdown-item" href="#">Management</a></li>
+            </ul>
+          </li>
+
+          <!-- TV SHOW / VIDEOS dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              TV Show / Videos
+            </a>
+            <ul class="dropdown-menu site-dropdown">
+              <li><a class="dropdown-item" href="speaker.html">Speaker</a></li>
+              <li><a class="dropdown-item" href="#">Moderator</a></li>
+            </ul>
+          </li>
+
+          <!-- NEWS dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              News
+            </a>
+            <ul class="dropdown-menu site-dropdown">
+              <li><a class="dropdown-item" href="media.html">Media</a></li>
+              <li><a class="dropdown-item" href="#">Press Room</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="awards.html">Awards</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </nav><!-- /NAVBAR -->
+
+  <!-- PAGE CONTENT WRAPPER -->
+  <div class="page-content">
+
+  <!-- =====================================================
+       BLOG SOCIAL PAGE
+       ===================================================== -->
+  <section class="blog-listing-section">
+    <div class="container-fluid px-0">
+      <div class="row g-0">
+
+        <!-- ========================
+             MAIN CONTENT (LEFT)
+             ======================== -->
+        <div class="col-lg-8 blog-listing-main">
+
+          <h1 class="blog-listing-category">Media</h1>
+
+          <!-- ---- Post 1 ---- -->
+          <article class="bl-post">
+            <h2 class="bl-post-title">
+              <a href="#">Vaccine hesitancy &ndash; India hesitancy: Two sides of the same dangerous coin</a>
+            </h2>
+            <p class="bl-post-date">July 13, 2023</p>
+            <div class="bl-post-body">
+              <a href="#" class="bl-post-thumb-link">
+                <img src="imgs/media/vaccine-refusal-and-indias-resistance-to-change-reflect-two-sides-of-the-same-dangerous-mindset-06002439-16x9_0-300x169.jpg" alt="Vaccine hesitancy" class="bl-post-thumb" />
+              </a>
+              <p class="bl-post-excerpt">
+                First Published in India Today on 6th July 2023. Vaccine hesitancy has a long history. Initially, vaccines were opposed on religious grounds, viewed as an interference with divine will. Later, in liberal societies, they were resisted as infringements on personal freedom, especially when mandated. The anti-vaccine movement gained steam from 1998 through a widely publicised study by Dr. Andrew Wakefield that falsely linked the MMR (Measles, Mumps and Rubella) vaccine to &hellip;
+              </p>
+              <a href="#" class="bl-read-more">[Read more…]</a>
+            </div>
+          </article>
+          <hr class="bl-divider" />
+
+          <!-- ---- Post 2 ---- -->
+          <article class="bl-post">
+            <h2 class="bl-post-title">
+              <a href="#">Decoding the Signals: Insights into this week&rsquo;s Pakistan-US Dynamics</a>
+            </h2>
+            <p class="bl-post-date">May 22, 2023</p>
+            <div class="bl-post-body">
+              <a href="#" class="bl-post-thumb-link">
+                <img src="imgs/media/Decoding-the-Signals-Insights-into-this-week’s-Pakistan-US-Dynamics-300x169.png" alt="Pakistan-US Dynamics" class="bl-post-thumb" />
+              </a>
+              <p class="bl-post-excerpt">
+                In the aftermath of the Pahalgam massacre, Pakistan&rsquo;s Defence Minister Khawaja Asif delivered a statement loaded with strategic signaling. He accused the United States &amp; the United Kingdom of playing a very negative role, charging them with promoting terrorism through Pakistan and hobnobbing with terrorists for three decades. Through this broadside, Islamabad signed a sharp pivot, retaliating against American criticism and abandonment by firmly closing the door on the U.S. and instead &hellip;
+              </p>
+              <a href="#" class="bl-read-more">[Read more…]</a>
+            </div>
+          </article>
+          <hr class="bl-divider" />
+
+          <!-- ---- Post 3 ---- -->
+          <article class="bl-post">
+            <h2 class="bl-post-title">
+              <a href="#">How Pope Francis brought a groundbreaking shift in the Catholic Church?</a>
+            </h2>
+            <p class="bl-post-date">April 24, 2023</p>
+            <div class="bl-post-body">
+              <a href="#" class="bl-post-thumb-link">
+                <img src="imgs/media/How-Pope-Francis-brought-a-groundbreaking-shift-in-the-Catholic-Church-300x169.jpg" alt="Pope Francis" class="bl-post-thumb" />
+              </a>
+              <p class="bl-post-excerpt">
+                From the moment he chose the name &lsquo;Francis,&rsquo; it was clear that this pope would be different. His inspiration was St. Francis of Assisi &ndash; a truly noble 13th-century saint, who is often seen as the first ecological thinker who underscored the need to live in harmony with our environment. Pope Francis carried forward that spirit, emerging as a firm advocate for the climate agenda. He supported the scientific consensus on global warming and emphasised that all action on the environment should be&hellip;
+              </p>
+              <a href="#" class="bl-read-more">[Read more…]</a>
+            </div>
+          </article>
+          <hr class="bl-divider" />
+
+          <!-- ---- Post 4 ---- -->
+          <article class="bl-post">
+            <h2 class="bl-post-title">
+              <a href="#">Aristotle, Montesquieu, and the Future of Modern Democracy</a>
+            </h2>
+            <p class="bl-post-date">April 24, 2023</p>
+            <div class="bl-post-body">
+              <a href="#" class="bl-post-thumb-link">
+                <img src="imgs/media/Aristotle-Montesquieu-and-the-Future-of-Modern-Democracy-300x169.jpg" alt="Aristotle Montesquieu Democracy" class="bl-post-thumb" />
+              </a>
+              <p class="bl-post-excerpt">
+                From ancient Greece to modern-day politics, the fate of governments follows a cycle that philosophers have long recognized. Aristotle described a cyclical theory of political change&mdash;later termed Anacyclosis by Polybius&mdash;in which forms of government follow a recurring sequence of rise, decline, and replacement. Montesquieu, writing centuries later, warned that extreme equality could erode institutions and lead to authoritarianism. Today, these warnings feel more urgent than ever. The rise of&hellip;
+              </p>
+              <a href="#" class="bl-read-more">[Read more…]</a>
+            </div>
+          </article>
+          <hr class="bl-divider" />
+
+          <!-- ---- Post 5 ---- -->
+          <article class="bl-post">
+            <h2 class="bl-post-title">
+              <a href="#">Trump vs. Ricardo vs. Tocqueville : The Economic, Ethical, and Social Fallout of Trump&rsquo;s Directives</a>
+            </h2>
+            <p class="bl-post-date">March 14, 2023</p>
+            <div class="bl-post-body">
+              <a href="#" class="bl-post-thumb-link">
+                <img src="imgs/media/trump-vs-Ricardo-vs-Tocqueville-300x168.jpg" alt="Trump vs Ricardo vs Tocqueville" class="bl-post-thumb" />
+              </a>
+              <p class="bl-post-excerpt">
+                On January 20, 2025, President Donald Trump began his second term. He has since issued over 50 directives that have already begun reshaping economic, ethical, and social landscapes. As we analyze these directives, it is important to understand their consequences through historical parallels and philosophical perspectives. To that end, I draw on the insights of David Ricardo and Alexis de Tocqueville to evaluate the implications of these edicts. Economic Fallout: The Return of Protectionism One&hellip;
+              </p>
+              <a href="#" class="bl-read-more">[Read more…]</a>
+            </div>
+          </article>
+          <hr class="bl-divider" />
+
+          <!-- ---- Post 6 ---- -->
+          <article class="bl-post">
+            <h2 class="bl-post-title">
+              <a href="#">ME(C)5E: Going Beyond McKinsey&rsquo;s MECE</a>
+            </h2>
+            <p class="bl-post-date">December 8, 2024</p>
+            <div class="bl-post-body">
+              <a href="#" class="bl-post-thumb-link">
+                <img src="imgs/media/pc-healthcare-executive-300x300.jpg" alt="ME(C)5E" class="bl-post-thumb bl-post-thumb--round" />
+              </a>
+              <p class="bl-post-excerpt">
+                McKinsey&rsquo;s MECE (Mutually Exclusive and Collectively Exhaustive) framework has been used for structured thinking &amp; communication by leading consultants, marketing professionals, journalists and other peer groups for five decades. The concept of MECE was brought into the world by Barbara Minto, who worked at McKinsey in the 1960s and 1970s. She was the first female MBA that McKinsey hired. Thanks to the popularity of MECE alone, she has proved to be big pay off for McKinsey&rsquo;s policy of&hellip;
+              </p>
+              <a href="#" class="bl-read-more">[Read more…]</a>
+            </div>
+          </article>
+          <hr class="bl-divider" />
+
+          <!-- Pagination -->
+          <nav class="bl-pagination" aria-label="Media pagination">
+            <a href="#" class="bl-page-link">1</a>
+            <a href="#" class="bl-page-link">2</a>
+            <span class="bl-page-dots">&hellip;</span>
+            <a href="#" class="bl-page-link">7</a>
+            <a href="#" class="bl-page-link bl-page-link--next">Next Page &raquo;</a>
+          </nav>
+
+        </div><!-- /blog-listing-main -->
+
+        <!-- ========================
+             SIDEBAR (RIGHT)
+             ======================== -->
+        <aside class="col-lg-4 blog-listing-sidebar">
+
+          <!-- Search -->
+          <div class="bl-sidebar-widget">
+            <form class="bl-search-form" onsubmit="return false;">
+              <input type="search" class="bl-search-input" placeholder="Search this website" />
+              <button type="submit" class="bl-search-btn" aria-label="Search"><i class="bi bi-search"></i></button>
+            </form>
+          </div>
+     <hr class="bl-divider" />
+          <!-- Recent Posts -->
+          <div class="bl-sidebar-widget">
+            <h3 class="bl-sidebar-title">Recent Posts</h3>
+
+            <ul class="bl-sidebar-list">
+              <li><a href="#">Japan–China Tensions: The Emerging Signals and Impact on India and US-India relations</a></li>
+              <li><a href="#">Why Cash Transfers Work: Lessons from Bihar and Beyond</a></li>
+              <li><a href="#">Trump, His Western Detractors, and the Shifting Overton Window</a></li>
+              <li><a href="#">Decoding of the trending meme: 'Mere Paas Modi Hai' (I have Modi on my Side)</a></li>
+              <li><a href="#">What BRICS and India Can Learn from the Bystander Effect</a></li>
+            </ul>
+          </div>
+
+          <!-- Categories -->
+          <div class="bl-sidebar-widget">
+            <h3 class="bl-sidebar-title">Categories</h3>
+            <ul class="bl-sidebar-list">
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Books</a></li>
+              <li><a href="#">English</a></li>
+              <li><a href="#">tip-box</a></li>
+              <li><a href="#">NEWS &amp; MEDIA</a></li>
+              <li><a href="#">Political</a></li>
+              <li><a href="#">Social</a></li>
+              <li><a href="#">Spiritual</a></li>
+              <li><a href="#">Videos</a></li>
+            </ul>
+          </div>
+
+          <!-- Archives -->
+          <div class="bl-sidebar-widget">
+            <h3 class="bl-sidebar-title">Archives</h3>
+            <ul class="bl-sidebar-list">
+              <li><a href="#">November 2025</a></li>
+              <li><a href="#">October 2025</a></li>
+              <li><a href="#">September 2025</a></li>
+              <li><a href="#">July 2025</a></li>
+              <li><a href="#">May 2025</a></li>
+              <li><a href="#">April 2025</a></li>
+              <li><a href="#">March 2025</a></li>
+              <li><a href="#">December 2024</a></li>
+              <li><a href="#">July 2024</a></li>
+              <li><a href="#">June 2023</a></li>
+              <li><a href="#">May 2023</a></li>
+              <li><a href="#">January 2023</a></li>
+              <li><a href="#">November 2022</a></li>
+              <li><a href="#">October 2022</a></li>
+              <li><a href="#">May 2019</a></li>
+              <li><a href="#">May 2018</a></li>
+              <li><a href="#">January 2018</a></li>
+              <li><a href="#">August 2017</a></li>
+              <li><a href="#">July 2017</a></li>
+              <li><a href="#">June 2017</a></li>
+              <li><a href="#">May 2014</a></li>
+              <li><a href="#">April 2014</a></li>
+            </ul>
+          </div>
+
+        </aside><!-- /sidebar -->
+
+      </div><!-- /row -->
+    </div><!-- /container -->
+  </section>
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="container-fluid px-5">
+        <div class="row gy-5">
+
+          <!-- Navigation -->
+          <div class="col-md-4 col-sm-6">
+            <h5 class="footer-col-title">Navigation</h5>
+            <ul class="footer-nav-list">
+              <li><a href="#"><i class="bi bi-person-fill"></i> About</a></li>
+              <li><a href="#"><i class="bi bi-envelope-fill"></i> Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Follow On -->
+          <div class="col-md-4 col-sm-6">
+            <h5 class="footer-col-title">Follow On</h5>
+            <ul class="footer-social-list">
+              <li><a href="https://twitter.com/WriterPavan" target="_blank" rel="noopener noreferrer"><i class="bi bi-twitter-x"></i> Twitter</a></li>
+              <li><a href="#" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i> Linkedin</a></li>
+              <li><a href="#" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram"></i> Instagram</a></li>
+              <li><a href="#" target="_blank" rel="noopener noreferrer"><i class="bi bi-facebook"></i> Facebook</a></li>
+            </ul>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="col-md-4">
+            <div class="newsletter-card">
+              <h5 class="footer-col-title newsletter-title">Subscribe Our Newsletter</h5>
+              <p class="footer-newsletter-text">Subscribe to our mailing list and get interesting stuff and updates to your email inbox.</p>
+              <form class="footer-newsletter-form" onsubmit="return false;">
+                <div class="newsletter-input-group">
+                  <input type="email" class="newsletter-input" placeholder="Email" />
+                  <span class="newsletter-icon"><i class="bi bi-envelope"></i></span>
+                </div>
+                <button type="submit" class="btn-signup-now">Sign Up Now</button>
+              </form>
+            </div>
+          </div>
+
+        </div><!-- /row -->
+      </div>
+    </div><!-- /footer-top -->
+
+    <div class="footer-bottom">
+      <div class="container-fluid px-5">
+        <p class="footer-copyright">Copyright &copy; 2018-2020. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer><!-- /FOOTER -->
+
+  </div><!-- /PAGE CONTENT WRAPPER -->
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc4s9bIOgUxi8T/jzmFXmuiCRLhcCRKBk7g+Y3eqCFT6"
+    crossorigin="anonymous"
+  ></script>
+
+</body>
+</html>

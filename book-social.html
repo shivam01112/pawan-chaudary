@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Social Books — Pavan Choudary" />
+  <title>Books – Social | Pavan Choudary</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lato:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5 CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+  />
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- =====================================================
+       NAVBAR
+       ===================================================== -->
+  <nav class="site-navbar navbar navbar-expand-lg">
+    <div class="container-fluid">
+
+      <!-- Logo -->
+      <a class="navbar-brand" href="index.html">
+        <img
+          src="imgs/logo.png"
+          alt="Pavan Choudary"
+          height="36"
+          style="display:inline-block; vertical-align:middle;"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"
+        />
+        <span style="display:none;">Pavan Choudary</span>
+      </a>
+
+      <!-- Mobile toggle -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNav"
+        aria-controls="mainNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Nav links -->
+      <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+        <ul class="navbar-nav align-items-lg-center">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+
+          <!-- BLOG dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Blog
+            </a>
+            <ul class="dropdown-menu site-dropdown">
+              <li><a class="dropdown-item" href="blog-social.html">Social</a></li>
+              <li><a class="dropdown-item" href="#">Political</a></li>
+              <li><a class="dropdown-item" href="#">Spiritual</a></li>
+            </ul>
+          </li>
+
+          <!-- BOOKS dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Books
+            </a>
+            <ul class="dropdown-menu site-dropdown">
+              <li><a class="dropdown-item" href="book-social.html">Social</a></li>
+              <li><a class="dropdown-item" href="#">Political</a></li>
+              <li><a class="dropdown-item" href="#">Spiritual</a></li>
+              <li><a class="dropdown-item" href="#">Management</a></li>
+            </ul>
+          </li>
+
+          <!-- TV SHOW / VIDEOS dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              TV Show / Videos
+            </a>
+            <ul class="dropdown-menu site-dropdown">
+              <li><a class="dropdown-item" href="speaker.html">Speaker</a></li>
+              <li><a class="dropdown-item" href="#">Moderator</a></li>
+            </ul>
+          </li>
+
+          <!-- NEWS dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              News
+            </a>
+            <ul class="dropdown-menu site-dropdown">
+              <li><a class="dropdown-item" href="media.html">Media</a></li>
+              <li><a class="dropdown-item" href="#">Press Room</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="awards.html">Awards</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </nav><!-- /NAVBAR -->
+
+  <!-- PAGE CONTENT WRAPPER -->
+  <div class="page-content">
+
+  <!-- =====================================================
+       BOOKS – SOCIAL PAGE
+       ===================================================== -->
+  <section class="bk-page-section">
+
+    <!-- Page heading -->
+    <div class="bk-page-header">
+      <h1 class="bk-page-title">Social</h1>
+    </div>
+
+    <!-- Books grid — 4 per row -->
+    <div class="bk-grid">
+
+      <!-- Row 1 -->
+      <div class="row g-4">
+
+        <!-- Book 1 -->
+        <div class="col-6 col-sm-4 col-md-3">
+          <div class="book-card">
+            <div class="book-cover-wrap">
+              <img src="imgs/how-a-good-person-can-really-win-preview-360x570.jpg" alt="Broom &amp; Groom" class="book-cover" />
+            </div>
+            <div class="book-info">
+              <h3 class="book-title">How A Good Person Can Really Win</h3>
+              <p class="book-author">By <a href="#" class="book-author-link">Pavan Choudary</a></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Book 2 -->
+        <div class="col-6 col-sm-4 col-md-3">
+          <div class="book-card">
+            <div class="book-cover-wrap">
+              <img src="imgs/confucius-social-wisdom.jpg" alt="Confucius Social Wisdom" class="book-cover" />
+            </div>
+            <div class="book-info">
+              <h3 class="book-title">Confucius Social Wisdom</h3>
+              <p class="book-author">By <a href="#" class="book-author-link">Pavan Choudary</a></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Book 3 -->
+        <div class="col-6 col-sm-4 col-md-3">
+          <div class="book-card">
+            <div class="book-cover-wrap">
+              <img src="imgs/machiavelli-for-moral-people-360x570.jpg" alt="Uprising 2011" class="book-cover" />
+            </div>
+            <div class="book-info">
+              <h3 class="book-title">Machiavelli for Moral People</h3>
+              <p class="book-author">By <a href="#" class="book-author-link">Pavan Choudary</a></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Book 4 -->
+        <div class="col-6 col-sm-4 col-md-3">
+          <div class="book-card">
+            <div class="book-cover-wrap">
+              <img src="imgs/lalbahadur.jpg" alt="Lal Bahadur Shastri" class="book-cover" />
+            </div>
+            <div class="book-info">
+              <h3 class="book-title">Lal Bahadur Shastri – Lessons in Leadership</h3>
+              <p class="book-author">By <a href="#" class="book-author-link">Pavan Choudary</a></p>
+            </div>
+          </div>
+        </div>
+            
+         <div class="col-6 col-sm-4 col-md-3">
+          <div class="book-card">
+            <div class="book-cover-wrap">
+              <img src="imgs/how-a-good-person-can-really-win-preview-360x570.jpg" alt="Broom &amp; Groom" class="book-cover" />
+            </div>
+            <div class="book-info">
+              <h3 class="book-title">How A Good Person Can Really Win</h3>
+              <p class="book-author">By <a href="#" class="book-author-link">Pavan Choudary</a></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Book 2 -->
+        <div class="col-6 col-sm-4 col-md-3">
+          <div class="book-card">
+            <div class="book-cover-wrap">
+              <img src="imgs/confucius-social-wisdom.jpg" alt="Confucius Social Wisdom" class="book-cover" />
+            </div>
+            <div class="book-info">
+              <h3 class="book-title">Confucius Social Wisdom</h3>
+              <p class="book-author">By <a href="#" class="book-author-link">Pavan Choudary</a></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Book 3 -->
+        <div class="col-6 col-sm-4 col-md-3">
+          <div class="book-card">
+            <div class="book-cover-wrap">
+              <img src="imgs/machiavelli-for-moral-people-360x570.jpg" alt="Uprising 2011" class="book-cover" />
+            </div>
+            <div class="book-info">
+              <h3 class="book-title">Machiavelli for Moral People</h3>
+              <p class="book-author">By <a href="#" class="book-author-link">Pavan Choudary</a></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Book 4 -->
+        <div class="col-6 col-sm-4 col-md-3">
+          <div class="book-card">
+            <div class="book-cover-wrap">
+              <img src="imgs/lalbahadur.jpg" alt="Lal Bahadur Shastri" class="book-cover" />
+            </div>
+            <div class="book-info">
+              <h3 class="book-title">Lal Bahadur Shastri – Lessons in Leadership</h3>
+              <p class="book-author">By <a href="#" class="book-author-link">Pavan Choudary</a></p>
+            </div>
+          </div>
+        </div>
+      </div><!-- /row 1 -->
+
+    </div><!-- /bk-grid -->
+
+    <!-- Pagination -->
+    <nav class="bk-pagination" aria-label="Books pagination">
+      <a href="#" class="bk-page-link bk-page-current">1</a>
+      <a href="#" class="bk-page-link">2</a>
+      <a href="#" class="bk-page-link">3</a>
+      <a href="#" class="bk-page-link">4</a>
+      <a href="#" class="bk-page-link bk-page-next">Next Page »</a>
+    </nav>
+
+  </section><!-- /BOOKS SOCIAL PAGE -->
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="container-fluid px-5">
+        <div class="row gy-5">
+
+          <!-- Navigation -->
+          <div class="col-md-4 col-sm-6">
+            <h5 class="footer-col-title">Navigation</h5>
+            <ul class="footer-nav-list">
+              <li><a href="#"><i class="bi bi-person-fill"></i> About</a></li>
+              <li><a href="#"><i class="bi bi-envelope-fill"></i> Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Follow On -->
+          <div class="col-md-4 col-sm-6">
+            <h5 class="footer-col-title">Follow On</h5>
+            <ul class="footer-social-list">
+              <li><a href="https://twitter.com/WriterPavan" target="_blank" rel="noopener noreferrer"><i class="bi bi-twitter-x"></i> Twitter</a></li>
+              <li><a href="#" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i> Linkedin</a></li>
+              <li><a href="#" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram"></i> Instagram</a></li>
+              <li><a href="#" target="_blank" rel="noopener noreferrer"><i class="bi bi-facebook"></i> Facebook</a></li>
+            </ul>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="col-md-4">
+            <div class="newsletter-card">
+              <h5 class="footer-col-title newsletter-title">Subscribe Our Newsletter</h5>
+              <p class="footer-newsletter-text">Subscribe to our mailing list and get interesting stuff and updates to your email inbox.</p>
+              <form class="footer-newsletter-form" onsubmit="return false;">
+                <div class="newsletter-input-group">
+                  <input type="email" class="newsletter-input" placeholder="Email" />
+                  <span class="newsletter-icon"><i class="bi bi-envelope"></i></span>
+                </div>
+                <button type="submit" class="btn-signup-now">Sign Up Now</button>
+              </form>
+            </div>
+          </div>
+
+        </div><!-- /row -->
+      </div>
+    </div><!-- /footer-top -->
+
+    <div class="footer-bottom">
+      <div class="container-fluid px-5">
+        <p class="footer-copyright">Copyright &copy; 2018-2020. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer><!-- /FOOTER -->
+
+  </div><!-- /PAGE CONTENT WRAPPER -->
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc4s9bIOgUxi8T/jzmFXmuiCRLhcCRKBk7g+Y3eqCFT6"
+    crossorigin="anonymous"
+  ></script>
+
+</body>
+</html>

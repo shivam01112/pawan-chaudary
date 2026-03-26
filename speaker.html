@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Speaker Videos — Pavan Choudary" />
+  <title>TV Show / Videos – Speaker | Pavan Choudary</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lato:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5 CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+  />
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    /* ======= LAYOUT ======= */
+    .speaker-main {
+     padding: 47px 50px 0px 50px;
+      border-right: 1px solid #d0d8de;
+      background: #fff;
+    }
+    .speaker-title {
+      font-family: 'Lato', sans-serif;
+      font-size: 32px;
+      font-weight: 900 !important;
+      color: #111;
+      margin: 0 0 14px 0 !important;
+      padding: 0 0 14px 0 !important;
+      border: none;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    /* ======= CAROUSEL WRAPPER ======= */
+    .sp-carousel-wrap {
+      position: relative;
+      width: 100%;
+      user-select: none;
+    }
+
+    /* ======= FEATURED PLAYER (16:9) ======= */
+    .sp-player-outer {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      background: #222;
+      overflow: hidden;
+      border: 6px solid #e0e0e0;
+      box-sizing: border-box;
+    }
+    .sp-poster, #sp-iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .sp-poster { cursor: pointer; display: block; }
+    .sp-poster-img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+    }
+    .sp-poster-overlay { position: absolute; inset: 0; }
+
+    /* Dark title bar at top of video */
+    .sp-video-title-bar {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      background: rgba(20,20,20,0.78);
+      color: #fff;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 400;
+      padding: 8px 12px 9px;
+      line-height: 1.35;
+      pointer-events: none;
+    }
+    .sp-video-title-text { display: block; font-size: 0.88rem; }
+    .sp-video-meta { display: block; font-size: 0.72rem; color: #ccc; margin-top: 2px; }
+
+    /* Center teal play button */
+    .sp-center-play {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      background: rgba(50,100,140,0.82);
+      border: none;
+      display: flex; align-items: center; justify-content: center;
+      pointer-events: none;
+      transition: background 0.2s;
+    }
+    .sp-poster:hover .sp-center-play {
+      background: rgba(50,100,140,1);
+    }
+    .sp-center-play svg { width: 26px; height: 26px; fill: #fff; margin-left: 5px; }
+
+    #sp-iframe { border: none; display: none; }
+
+    /* ======= CIRCULAR CAROUSEL ARROWS ======= */
+    /* Arrows sit outside the player box, centered vertically */
+    .sp-car-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: rgba(246, 246, 246, 0.82);
+      border: none;
+      color: #333;
+      font-size: 1rem;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      z-index: 20;
+      transition: background 0.2s;
+      padding: 0;
+      line-height: 1;
+    }
+    .sp-car-arrow:hover { background: rgba(80,80,80,0.92); color: #fff; }
+    /* Arrows inside the video, on the left/right edges */
+    .sp-car-arrow-prev { left: 8px; }
+    .sp-car-arrow-next { right: 8px; }
+
+    /* ======= THUMBNAIL GRID ======= */
+    .sp-grid { margin-top: 18px; }
+    .sp-thumb-item { cursor: pointer; }
+    .sp-thumb-img-wrap {
+      position: relative; width: 100%; padding-top: 75%;
+      overflow: hidden; background: #bbb;
+    }
+    .sp-thumb-img-wrap img {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; transition: opacity 0.2s;
+    }
+    .sp-thumb-item:hover .sp-thumb-img-wrap img,
+    .sp-thumb-item.sp-active .sp-thumb-img-wrap img { opacity: 0.7; }
+    .sp-thumb-play-icon {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0.55; transition: opacity 0.2s; pointer-events: none;
+    }
+    .sp-thumb-item:hover .sp-thumb-play-icon { opacity: 1; }
+    .sp-thumb-item.sp-active .sp-thumb-play-icon { opacity: 1; }
+    /* Circular outline play button on thumbnails */
+    .sp-thumb-play-icon .sp-tb-play-circle {
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.25);
+      border: 2px solid rgba(255,255,255,0.85);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .sp-thumb-play-icon .sp-tb-play-circle svg {
+      width: 13px; height: 13px; fill: #fff; margin-left: 2px;
+    }
+    .sp-thumb-title {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.68rem; color: #444;
+      margin: 4px 0 0 0; line-height: 1.3;
+      display: -webkit-box; -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical; overflow: hidden;
+    }
+    .sp-thumb-item.sp-active .sp-thumb-title { color: #0085da; font-weight: 700; }
+  </style>
+</head>
+<body>
+
+  <!-- =====================================================
+       NAVBAR
+       ===================================================== -->
+  <nav class="site-navbar navbar navbar-expand-lg">
+    <div class="container-fluid">
+
+      <!-- Logo -->
+      <a class="navbar-brand" href="index.html">
+        <img
+          src="imgs/logo.png"
+          alt="Pavan Choudary"
+          height="36"
+          style="display:inline-block; vertical-align:middle;"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"
+        />
+        <span style="display:none;">Pavan Choudary</span>
+      </a>
+
+      <!-- Mobile toggle -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNav"
+        aria-controls="mainNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Nav links -->
+      <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+        <ul class="navbar-nav align-items-lg-center">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+
+          <!-- BLOG dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Blog
+            </a>
+            <ul class="dropdown-menu site-dropdown">
+              <li><a class="dropdown-item" href="blog-social.html">Social</a></li>
+              <li><a class="dropdown-item" href="#">Political</a></li>
+              <li><a class="dropdown-item" href="#">Spiritual</a></li>
+            </ul>
+          </li>
+
+          <!-- BOOKS dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Books
+            </a>
+            <ul class="dropdown-menu site-dropdown">
+              <li><a class="dropdown-item" href="book-social.html">Social</a></li>
+              <li><a class="dropdown-item" href="#">Political</a></li>
+              <li><a class="dropdown-item" href="#">Spiritual</a></li>
+              <li><a class="dropdown-item" href="#">Management</a></li>
+            </ul>
+          </li>
+
+          <!-- TV SHOW / VIDEOS dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              TV Show / Videos
+            </a>
+            <ul class="dropdown-menu site-dropdown">
+              <li><a class="dropdown-item" href="speaker.html">Speaker</a></li>
+              <li><a class="dropdown-item" href="#">Moderator</a></li>
+            </ul>
+          </li>
+
+          <!-- NEWS dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              News
+            </a>
+            <ul class="dropdown-menu site-dropdown">
+              <li><a class="dropdown-item" href="media.html">Media</a></li>
+              <li><a class="dropdown-item" href="#">Press Room</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="awards.html">Awards</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </nav><!-- /NAVBAR -->
+
+  <!-- PAGE CONTENT WRAPPER -->
+  <div class="page-content">
+
+  <!-- =====================================================
+       SPEAKER PAGE
+       ===================================================== -->
+  <section class="speaker-section">
+    <div class="container-fluid px-0">
+      <div class="row g-0">
+
+        <!-- MAIN COLUMN -->
+        <div class="col-lg-8 speaker-main">
+          <h1 class="speaker-title">Speaker</h1>
+
+          <!-- Featured Carousel Player -->
+          <div class="sp-carousel-wrap">
+
+            <!-- Prev Arrow (circular, centre-left) -->
+            <button class="sp-car-arrow sp-car-arrow-prev" onclick="goPrev()" aria-label="Previous video">
+              <i class="bi bi-chevron-left"></i>
+            </button>
+
+            <!-- Player Box -->
+            <div class="sp-player-outer" id="sp-player-outer">
+              <div class="sp-poster" id="sp-poster" onclick="playVideo(currentIdx, false)">
+                <img id="sp-poster-img" src="imgs/speaker/1 (22).jpg" alt="Speaker Video" class="sp-poster-img" />
+                <div class="sp-poster-overlay">
+                  <!-- Title bar at top -->
+                  <div class="sp-video-title-bar" id="sp-video-title-bar">
+                    <span class="sp-video-title-text" id="sp-title-text">Pavan Choudary on the Book launch of Lal Bahadur Shastri – Lessons in Leadership</span>
+                    <span class="sp-video-meta" id="sp-meta-text">Duration: 484&nbsp;&nbsp;Date: May 2, 2014&nbsp;&nbsp;Views: 54</span>
+                  </div>
+                  <!-- Teal centre play circle -->
+                  <div class="sp-center-play">
+                    <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+                  </div>
+                </div>
+              </div>
+              <iframe id="sp-iframe" src="" allow="autoplay; encrypted-media" allowfullscreen title="Speaker Video"></iframe>
+            </div>
+
+            <!-- Next Arrow (circular, centre-right) -->
+            <button class="sp-car-arrow sp-car-arrow-next" onclick="goNext()" aria-label="Next video">
+              <i class="bi bi-chevron-right"></i>
+            </button>
+
+          </div><!-- /sp-carousel-wrap -->
+
+          <!-- Thumbnail Grid (built by JS) -->
+          <div id="sp-grid" class="sp-grid row row-cols-3 row-cols-sm-4 row-cols-md-5 g-2"></div>
+        </div>
+
+        <!-- SIDEBAR -->
+        <aside class="col-lg-4 blog-listing-sidebar">
+          <div class="bl-sidebar-widget">
+            <form class="bl-search-form" onsubmit="return false;">
+              <input type="search" class="bl-search-input" placeholder="Search this website" />
+              <button type="submit" class="bl-search-btn" aria-label="Search"><i class="bi bi-search"></i></button>
+            </form>
+          </div>
+          <hr class="bl-divider" />
+          <div class="bl-sidebar-widget">
+            <h3 class="bl-sidebar-title">Recent Posts</h3>
+            <ul class="bl-sidebar-list">
+              <li><a href="#">Japan&ndash;China Tensions: The Emerging Signals and Impact on India and US-India relations</a></li>
+              <li><a href="#">Why Cash Transfers Work: Lessons from Bihar and Beyond</a></li>
+              <li><a href="#">Trump, His Western Detractors, and the Shifting Overton Window</a></li>
+              <li><a href="#">Decoding of the trending meme: Mere Paas Modi Hai (I have Modi on my Side)</a></li>
+              <li><a href="#">What BRICS and India Can Learn from the Bystander Effect</a></li>
+            </ul>
+          </div>
+          <div class="bl-sidebar-widget">
+            <h3 class="bl-sidebar-title">Categories</h3>
+            <ul class="bl-sidebar-list">
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Books</a></li>
+              <li><a href="#">English</a></li>
+              <li><a href="#">tip-des</a></li>
+              <li><a href="#">NEWS &amp; MEDIA</a></li>
+              <li><a href="#">Political</a></li>
+              <li><a href="#">Social</a></li>
+              <li><a href="#">Spiritual</a></li>
+              <li><a href="#">Videos</a></li>
+            </ul>
+          </div>
+          <div class="bl-sidebar-widget">
+            <h3 class="bl-sidebar-title">Archives</h3>
+            <ul class="bl-sidebar-list">
+              <li><a href="#">November 2025</a></li>
+              <li><a href="#">October 2025</a></li>
+              <li><a href="#">September 2025</a></li>
+              <li><a href="#">July 2025</a></li>
+              <li><a href="#">May 2025</a></li>
+              <li><a href="#">April 2025</a></li>
+              <li><a href="#">March 2025</a></li>
+              <li><a href="#">December 2024</a></li>
+              <li><a href="#">July 2024</a></li>
+              <li><a href="#">June 2023</a></li>
+              <li><a href="#">May 2023</a></li>
+              <li><a href="#">January 2023</a></li>
+              <li><a href="#">November 2022</a></li>
+              <li><a href="#">October 2022</a></li>
+              <li><a href="#">May 2019</a></li>
+              <li><a href="#">May 2018</a></li>
+              <li><a href="#">January 2018</a></li>
+              <li><a href="#">August 2017</a></li>
+              <li><a href="#">July 2017</a></li>
+              <li><a href="#">June 2017</a></li>
+              <li><a href="#">May 2014</a></li>
+              <li><a href="#">April 2014</a></li>
+            </ul>
+          </div>
+        </aside>
+
+      </div><!-- /row -->
+    </div><!-- /container -->
+  </section><!-- /SPEAKER PAGE -->
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="container-fluid px-5">
+        <div class="row gy-5">
+
+          <!-- Navigation -->
+          <div class="col-md-4 col-sm-6">
+            <h5 class="footer-col-title">Navigation</h5>
+            <ul class="footer-nav-list">
+              <li><a href="#"><i class="bi bi-person-fill"></i> About</a></li>
+              <li><a href="#"><i class="bi bi-envelope-fill"></i> Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Follow On -->
+          <div class="col-md-4 col-sm-6">
+            <h5 class="footer-col-title">Follow On</h5>
+            <ul class="footer-social-list">
+              <li><a href="https://twitter.com/WriterPavan" target="_blank" rel="noopener noreferrer"><i class="bi bi-twitter-x"></i> Twitter</a></li>
+              <li><a href="#" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i> Linkedin</a></li>
+              <li><a href="#" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram"></i> Instagram</a></li>
+              <li><a href="#" target="_blank" rel="noopener noreferrer"><i class="bi bi-facebook"></i> Facebook</a></li>
+            </ul>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="col-md-4">
+            <div class="newsletter-card">
+              <h5 class="footer-col-title newsletter-title">Subscribe Our Newsletter</h5>
+              <p class="footer-newsletter-text">Subscribe to our mailing list and get interesting stuff and updates to your email inbox.</p>
+              <form class="footer-newsletter-form" onsubmit="return false;">
+                <div class="newsletter-input-group">
+                  <input type="email" class="newsletter-input" placeholder="Email" />
+                  <span class="newsletter-icon"><i class="bi bi-envelope"></i></span>
+                </div>
+                <button type="submit" class="btn-signup-now">Sign Up Now</button>
+              </form>
+            </div>
+          </div>
+
+        </div><!-- /row -->
+      </div>
+    </div><!-- /footer-top -->
+
+    <div class="footer-bottom">
+      <div class="container-fluid px-5">
+        <p class="footer-copyright">Copyright &copy; 2018-2020. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer><!-- /FOOTER -->
+
+  </div><!-- /PAGE CONTENT WRAPPER -->
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc4s9bIOgUxi8T/jzmFXmuiCRLhcCRKBk7g+Y3eqCFT6"
+    crossorigin="anonymous"
+  ></script>
+
+  <!-- =====================================================
+       SPEAKER VIDEO LOGIC
+       ===================================================== -->
+  <script>
+    var videos = [
+      { id: 'hQ8-6FIx7vk', thumb: 'imgs/speaker/1 (22).jpg',  title: 'Pavan Choudary on the Book launch of Lal Bahadur Shastri – Lessons in Leadership', meta: 'Duration: 484  Date: May 2, 2014  Views: 54' },
+      { id: '357KBe_e5P0', thumb: 'imgs/speaker/thumbnail-for-videos-150x150.jpg', title: 'The Deep Slice: Pavan Choudary - CEO, Author, Speaker', meta: '' },
+      { id: 'RAwYptAhiGY', thumb: 'imgs/speaker/1 (3).jpg',  title: 'The Deep Slice: What Are You Doing?', meta: '' },
+      { id: 'hQ8-6FIx7vk', thumb: 'imgs/speaker/1 (4).jpg',  title: 'The Deep Slice: Is This the Right Path?', meta: '' },
+      { id: '357KBe_e5P0', thumb: 'imgs/speaker/1 (5).jpg',  title: 'The Deep Slice: To Change Your Life', meta: '' },
+      { id: 'RAwYptAhiGY', thumb: 'imgs/speaker/1 (6).jpg',  title: 'The Deep Slice: Are You Making an Effort?', meta: '' },
+      { id: 'hQ8-6FIx7vk', thumb: 'imgs/speaker/1 (7).jpg',  title: 'The Deep Slice: Find Your Purpose', meta: '' },
+      { id: '357KBe_e5P0', thumb: 'imgs/speaker/1 (8).jpg',  title: 'The Deep Slice: Voice Your Truth', meta: '' },
+      { id: 'RAwYptAhiGY', thumb: 'imgs/speaker/1 (9).jpg',  title: 'The Deep Slice: Value Heartily', meta: '' },
+      { id: 'hQ8-6FIx7vk', thumb: 'imgs/speaker/1 (10).jpg', title: 'The Deep Slice: Say No to Negativity', meta: '' },
+      { id: '357KBe_e5P0', thumb: 'imgs/speaker/1 (11).jpg', title: 'The Deep Slice: Realize National Potential', meta: '' },
+      { id: 'RAwYptAhiGY', thumb: 'imgs/speaker/1 (12).jpg', title: 'The Deep Slice: Practice Heartily', meta: '' },
+      { id: 'hQ8-6FIx7vk', thumb: 'imgs/speaker/1 (13).jpg', title: 'Pavan Choudary: Meditation Divine', meta: '' },
+      { id: '357KBe_e5P0', thumb: 'imgs/speaker/1 (14).jpg', title: 'Pavan Choudary: No to Jealousy in Life', meta: '' },
+      { id: 'RAwYptAhiGY', thumb: 'imgs/speaker/1 (15).jpg', title: 'Pavan Choudary: Kindness - Biggest Gift', meta: '' },
+      { id: 'hQ8-6FIx7vk', thumb: 'imgs/speaker/1 (16).jpg', title: 'Pavan Choudary: Give Respect - Get Respect', meta: '' },
+      { id: '357KBe_e5P0', thumb: 'imgs/speaker/1 (17).jpg', title: 'Pavan Choudary: Give Before You Expect', meta: '' },
+      { id: 'RAwYptAhiGY', thumb: 'imgs/speaker/1 (18).jpg', title: 'Pavan Choudary: Fight Back', meta: '' },
+      { id: 'hQ8-6FIx7vk', thumb: 'imgs/speaker/1 (19).jpg', title: 'Pavan Choudary: Do Not Flaunt Your Good Deeds', meta: '' },
+      { id: '357KBe_e5P0', thumb: 'imgs/speaker/1 (20).jpg', title: 'Pavan Choudary: Develop Your Mind', meta: '' },
+      { id: 'RAwYptAhiGY', thumb: 'imgs/speaker/1 (21).jpg', title: 'Anil Shastri on the Role of Pavan Choudary', meta: '' }
+    ];
+
+    var currentIdx = 0;
+
+    // Build thumbnail grid dynamically
+    var grid = document.getElementById('sp-grid');
+    videos.forEach(function(v, i) {
+      var col = document.createElement('div');
+      col.className = 'col';
+      col.innerHTML =
+        '<div class="sp-thumb-item' + (i === 0 ? ' sp-active' : '') + '" onclick="playVideo(' + i + ', true)">' +
+          '<div class="sp-thumb-img-wrap">' +
+            '<img src="' + v.thumb + '" alt="' + v.title.replace(/"/g, '&quot;') + '" loading="lazy" />' +
+            '<div class="sp-thumb-play-icon"><div class="sp-tb-play-circle"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div></div>' +
+          '</div>' +
+          '<p class="sp-thumb-title">' + v.title + '</p>' +
+        '</div>';
+      grid.appendChild(col);
+    });
+
+    // ── Play a video in the featured player ──────────────────
+    function playVideo(idx, autoScroll) {
+      currentIdx = idx;
+      var v = videos[idx];
+
+      // Load YouTube embed with autoplay
+      var iframe = document.getElementById('sp-iframe');
+      iframe.src = 'https://www.youtube.com/embed/' + v.id +
+                   '?autoplay=1&rel=0&modestbranding=1';
+      iframe.style.display = 'block';
+
+      // Hide poster
+      document.getElementById('sp-poster').style.display = 'none';
+
+      // Highlight active thumbnail
+      document.querySelectorAll('.sp-thumb-item').forEach(function(el, i) {
+        el.classList.toggle('sp-active', i === idx);
+      });
+
+      // Scroll to player
+      if (autoScroll) {
+        document.getElementById('sp-player-outer').scrollIntoView(
+          { behavior: 'smooth', block: 'start' }
+        );
+      }
+    }
+
+    // ── Carousel navigation ────────────────────────────────────
+    function showVideo(idx) {
+      currentIdx = idx;
+      var v = videos[idx];
+
+      // Stop any playing iframe and show poster again
+      var iframe = document.getElementById('sp-iframe');
+      iframe.src = '';
+      iframe.style.display = 'none';
+
+      document.getElementById('sp-poster-img').src = v.thumb;
+      document.getElementById('sp-poster').style.display = 'block';
+
+      // Update title overlay
+      document.getElementById('sp-title-text').textContent = v.title;
+      document.getElementById('sp-meta-text').textContent = v.meta;
+      document.getElementById('sp-meta-text').style.display = v.meta ? 'block' : 'none';
+
+      // Highlight active thumbnail
+      document.querySelectorAll('.sp-thumb-item').forEach(function(el, i) {
+        el.classList.toggle('sp-active', i === idx);
+      });
+    }
+
+    function goNext() {
+      var nextIdx = (currentIdx + 1) % videos.length;
+      showVideo(nextIdx);
+    }
+
+    function goPrev() {
+      var prevIdx = (currentIdx - 1 + videos.length) % videos.length;
+      showVideo(prevIdx);
+    }
+  </script>
+
+</body>
+</html>

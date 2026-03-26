@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Social Blog — Pavan Choudary" />
+  <title>Social | Pavan Choudary</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lato:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5 CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+  />
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- =====================================================
+       NAVBAR
+       ===================================================== -->
+  <nav class="site-navbar navbar navbar-expand-lg">
+    <div class="container-fluid">
+
+      <!-- Logo -->
+      <a class="navbar-brand" href="index.html">
+        <img
+          src="imgs/logo.png"
+          alt="Pavan Choudary"
+          height="36"
+          style="display:inline-block; vertical-align:middle;"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"
+        />
+        <span style="display:none;">Pavan Choudary</span>
+      </a>
+
+      <!-- Mobile toggle -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNav"
+        aria-controls="mainNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Nav links -->
+      <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+        <ul class="navbar-nav align-items-lg-center">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+
+          <!-- BLOG dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Blog
+            </a>
+            <ul class="dropdown-menu site-dropdown">
+              <li><a class="dropdown-item" href="blog-social.html">Social</a></li>
+              <li><a class="dropdown-item" href="#">Political</a></li>
+              <li><a class="dropdown-item" href="#">Spiritual</a></li>
+            </ul>
+          </li>
+
+          <!-- BOOKS dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Books
+            </a>
+            <ul class="dropdown-menu site-dropdown">
+              <li><a class="dropdown-item" href="book-social.html">Social</a></li>
+              <li><a class="dropdown-item" href="#">Political</a></li>
+              <li><a class="dropdown-item" href="#">Spiritual</a></li>
+              <li><a class="dropdown-item" href="#">Management</a></li>
+            </ul>
+          </li>
+
+          <!-- TV SHOW / VIDEOS dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              TV Show / Videos
+            </a>
+            <ul class="dropdown-menu site-dropdown">
+              <li><a class="dropdown-item" href="speaker.html">Speaker</a></li>
+              <li><a class="dropdown-item" href="#">Moderator</a></li>
+            </ul>
+          </li>
+
+          <!-- NEWS dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              News
+            </a>
+            <ul class="dropdown-menu site-dropdown">
+              <li><a class="dropdown-item" href="media.html">Media</a></li>
+              <li><a class="dropdown-item" href="#">Press Room</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="awards.html">Awards</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </nav><!-- /NAVBAR -->
+
+  <!-- PAGE CONTENT WRAPPER -->
+  <div class="page-content">
+
+  <!-- =====================================================
+       BLOG SOCIAL PAGE
+       ===================================================== -->
+  <section class="blog-listing-section">
+    <div class="container-fluid px-0">
+      <div class="row g-0">
+
+        <!-- ========================
+             MAIN CONTENT (LEFT)
+             ======================== -->
+        <div class="col-lg-8 blog-listing-main">
+
+          <h1 class="blog-listing-category">Social</h1>
+
+          <!-- ---- Post 1 ---- -->
+          <article class="bl-post">
+            <h2 class="bl-post-title">
+              <a href="#">Why Cash Transfers Work: Lessons from Bihar and Beyond</a>
+            </h2>
+            <p class="bl-post-date">November 22, 2025</p>
+            <div class="bl-post-body">
+              <a href="#" class="bl-post-thumb-link">
+                <img src="imgs/blog-social/Why Cash Transfers .jpg" alt="Why Cash Transfers Work" style="    width: 200px;" class="bl-post-thumb" />
+              </a>
+              <p class="bl-post-excerpt">
+                The Bihar election quietly highlighted something much bigger than an electoral result: the growing power of Direct Benefit Transfers (DBTs). 1.5 crore women received ₹10,000 directly. We can argue about the politics, but the economic impact is worth paying attention to. 1. From Leakage to Delivery For decades, public money leaked through layers of departments and intermediaries. With DBTs, a rupee sent is finally a rupee received. No middlemen. No delays. No 'come tomorrow'. That …
+              </p>
+              <a href="#" class="bl-read-more">[Read more…]</a>
+            </div>
+          </article>
+          <hr class="bl-divider" />
+
+          <!-- ---- Post 2 ---- -->
+          <article class="bl-post">
+            <h2 class="bl-post-title">
+              <a href="#">When Everyone's Responsible, No One Is: The Hidden Cost of Diffused Ownership</a>
+            </h2>
+            <p class="bl-post-date">July 4, 2025</p>
+            <div class="bl-post-body">
+              <a href="#" class="bl-post-thumb-link">
+                <img src="imgs/blog-social/When Everyone’s.png" style="width: 250px;" alt="Diffused Ownership" class="bl-post-thumb" />
+              </a>
+              <p class="bl-post-excerpt">
+                I came across this striking experiment by social psychologist Bibb Latané. Participants were placed in separate booths and asked to shout as loudly as possible. In some cases, they were told they were shouting alone. In others, that their shouts would be combined with others in a group. In truth, they were always shouting alone. But when they believed they were part of a group, their effort dropped. When they thought their individual voice would be heard and measured, they shouted…
+              </p>
+              <a href="#" class="bl-read-more">[Read more…]</a>
+            </div>
+          </article>
+          <hr class="bl-divider" />
+
+          <!-- ---- Post 3 ---- -->
+          <article class="bl-post">
+            <h2 class="bl-post-title">
+              <a href="#">How to Discover Your True Calling?</a>
+            </h2>
+            <p class="bl-post-date">May 27, 2025</p>
+            <div class="bl-post-body">
+              <a href="#" class="bl-post-thumb-link">
+                <img src="imgs/blog-social/How to Discover.jpg" alt="Discover Your True Calling" class="bl-post-thumb" />
+              </a>
+              <p class="bl-post-excerpt">
+                Going Beyond Ikigai – Deciphering what you love doing and what you are good at. Most of you would have heard about Ikigai. Ikigai is the Japanese concept that represents the intersection of four key elements: 1. What you are good at 2. What you love doing 3. What the world needs 4. What will pay you for it. The balance between aptitude, passion, societal value, and market value, offers a sense of purpose and fulfilment in life. Two aspects of Ikigai – identifying what the world…
+              </p>
+              <a href="#" class="bl-read-more">[Read more…]</a>
+            </div>
+          </article>
+          <hr class="bl-divider" />
+
+          <!-- ---- Post 4 ---- -->
+          <article class="bl-post">
+            <h2 class="bl-post-title">
+              <a href="#">How Pope Francis brought a groundbreaking shift in the Catholic Church?</a>
+            </h2>
+            <p class="bl-post-date">April 14, 2025</p>
+            <div class="bl-post-body">
+              <a href="#" class="bl-post-thumb-link">
+                <img src="imgs/blog-social/How-Pope-Francis-brought-a-groundbreaking-shift-in-the-Catholic-Church-300x169.jpg" alt="Pope Francis" class="bl-post-thumb" />
+              </a>
+              <p class="bl-post-excerpt">
+                From the moment he chose the name 'Francis,' it was clear that this pope would be different. His inspiration was St. Francis of Assisi – a truly public 13th-century saint, who is often seen as the first ecological thinker who harmonised the soul within, in harmony with our environment. Pope Francis reinterpreted that spirit, emerging as a firm advocate for the climate agenda. He supported the scientific consensus on global warming and emphasised that all action on the environment should be…
+              </p>
+              <a href="#" class="bl-read-more">[Read more…]</a>
+            </div>
+          </article>
+          <hr class="bl-divider" />
+
+          <!-- ---- Post 5 ---- -->
+          <article class="bl-post">
+            <h2 class="bl-post-title">
+              <a href="#">ME(C)5E: Going Beyond McKinsey's MECE</a>
+            </h2>
+            <p class="bl-post-date">December 8, 2024</p>
+            <div class="bl-post-body">
+              <a href="#" class="bl-post-thumb-link">
+                <img src="imgs/blog-social/pc-healthcare-executive-300x300.jpg" alt="ME(C)5E" class="bl-post-thumb bl-post-thumb--round" />
+              </a>
+              <p class="bl-post-excerpt">
+                Originally Published in Forbes McKinsey's MECE (Mutually Exclusive and Collectively Exhaustive) framework has been used for structured thinking &amp; communication by leading consultants, marketing professionals, journalists and other peer groups for five decades. The concept of MECE was brought into the world by Barbara Minto, who worked at McKinsey in the 1960s and 1970s. She was the first female MBA that McKinsey hired. Thanks to the popularity of MECE alone, she has proved to be…
+              </p>
+              <a href="#" class="bl-read-more">[Read more…]</a>
+            </div>
+          </article>
+          <hr class="bl-divider" />
+
+          <!-- ---- Post 6 ---- -->
+          <article class="bl-post">
+            <h2 class="bl-post-title">
+              <a href="#">Five Wishes From The PM This Republic Day</a>
+            </h2>
+            <p class="bl-post-date">January 25, 2016</p>
+            <div class="bl-post-body">
+              <a href="#" class="bl-post-thumb-link">
+                <img src="imgs/blog-social/modi-1p-img-300x167.jpg" alt="Five Wishes From The PM" class="bl-post-thumb" />
+              </a>
+              <p class="bl-post-excerpt">
+                Here is my take on the top five areas PM Narendra Modi could focus on. The last I wrote of my expectations from the PM was for his Independence Day speech. Some of the wishes I put forth must have been on his agenda as well, as I see some spew on these. Thought I must come up with the next set of asks from my PM on 69th Republic Day of India. So, for his consideration, here is my take on the top five areas he could focus on: 1. Avoid drastic interventions in Business – Factor in…
+              </p>
+              <a href="#" class="bl-read-more">[Read more…]</a>
+            </div>
+          </article>
+          <hr class="bl-divider" />
+
+          <!-- Pagination -->
+          <nav class="bl-pagination" aria-label="Blog pagination">
+            <a href="#" class="bl-page-link bl-page-link--prev" aria-label="Previous">&#8592;</a>
+            <a href="#" class="bl-page-link">2</a>
+            <a href="#" class="bl-page-link">3</a>
+            <span class="bl-page-dots">…</span>
+            <a href="#" class="bl-page-link">6</a>
+            <a href="#" class="bl-page-link bl-page-link--next">Next Page &#8594;</a>
+          </nav>
+
+        </div><!-- /blog-listing-main -->
+
+        <!-- ========================
+             SIDEBAR (RIGHT)
+             ======================== -->
+        <aside class="col-lg-4 blog-listing-sidebar">
+
+          <!-- Search -->
+          <div class="bl-sidebar-widget">
+            <form class="bl-search-form" onsubmit="return false;">
+              <input type="search" class="bl-search-input" placeholder="Search this website" />
+              <button type="submit" class="bl-search-btn" aria-label="Search"><i class="bi bi-search"></i></button>
+            </form>
+          </div>
+     <hr class="bl-divider" />
+          <!-- Recent Posts -->
+          <div class="bl-sidebar-widget">
+            <h3 class="bl-sidebar-title">Recent Posts</h3>
+
+            <ul class="bl-sidebar-list">
+              <li><a href="#">Japan–China Tensions: The Emerging Signals and Impact on India and US-India relations</a></li>
+              <li><a href="#">Why Cash Transfers Work: Lessons from Bihar and Beyond</a></li>
+              <li><a href="#">Trump, His Western Detractors, and the Shifting Overton Window</a></li>
+              <li><a href="#">Decoding of the trending meme: 'Mere Paas Modi Hai' (I have Modi on my Side)</a></li>
+              <li><a href="#">What BRICS and India Can Learn from the Bystander Effect</a></li>
+            </ul>
+          </div>
+
+          <!-- Categories -->
+          <div class="bl-sidebar-widget">
+            <h3 class="bl-sidebar-title">Categories</h3>
+            <ul class="bl-sidebar-list">
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Books</a></li>
+              <li><a href="#">English</a></li>
+              <li><a href="#">tip-box</a></li>
+              <li><a href="#">NEWS &amp; MEDIA</a></li>
+              <li><a href="#">Political</a></li>
+              <li><a href="#">Social</a></li>
+              <li><a href="#">Spiritual</a></li>
+              <li><a href="#">Videos</a></li>
+            </ul>
+          </div>
+
+          <!-- Archives -->
+          <div class="bl-sidebar-widget">
+            <h3 class="bl-sidebar-title">Archives</h3>
+            <ul class="bl-sidebar-list">
+              <li><a href="#">November 2025</a></li>
+              <li><a href="#">October 2025</a></li>
+              <li><a href="#">September 2025</a></li>
+              <li><a href="#">July 2025</a></li>
+              <li><a href="#">May 2025</a></li>
+              <li><a href="#">April 2025</a></li>
+              <li><a href="#">March 2025</a></li>
+              <li><a href="#">December 2024</a></li>
+              <li><a href="#">July 2024</a></li>
+              <li><a href="#">June 2023</a></li>
+              <li><a href="#">May 2023</a></li>
+              <li><a href="#">November 2022</a></li>
+              <li><a href="#">October 2021</a></li>
+              <li><a href="#">May 2018</a></li>
+              <li><a href="#">January 2018</a></li>
+              <li><a href="#">August 2017</a></li>
+              <li><a href="#">July 2017</a></li>
+              <li><a href="#">June 2017</a></li>
+              <li><a href="#">May 2014</a></li>
+              <li><a href="#">April 2013</a></li>
+            </ul>
+          </div>
+
+        </aside><!-- /sidebar -->
+
+      </div><!-- /row -->
+    </div><!-- /container -->
+  </section>
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="container-fluid px-5">
+        <div class="row gy-5">
+
+          <!-- Navigation -->
+          <div class="col-md-4 col-sm-6">
+            <h5 class="footer-col-title">Navigation</h5>
+            <ul class="footer-nav-list">
+              <li><a href="#"><i class="bi bi-person-fill"></i> About</a></li>
+              <li><a href="#"><i class="bi bi-envelope-fill"></i> Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Follow On -->
+          <div class="col-md-4 col-sm-6">
+            <h5 class="footer-col-title">Follow On</h5>
+            <ul class="footer-social-list">
+              <li><a href="https://twitter.com/WriterPavan" target="_blank" rel="noopener noreferrer"><i class="bi bi-twitter-x"></i> Twitter</a></li>
+              <li><a href="#" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i> Linkedin</a></li>
+              <li><a href="#" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram"></i> Instagram</a></li>
+              <li><a href="#" target="_blank" rel="noopener noreferrer"><i class="bi bi-facebook"></i> Facebook</a></li>
+            </ul>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="col-md-4">
+            <div class="newsletter-card">
+              <h5 class="footer-col-title newsletter-title">Subscribe Our Newsletter</h5>
+              <p class="footer-newsletter-text">Subscribe to our mailing list and get interesting stuff and updates to your email inbox.</p>
+              <form class="footer-newsletter-form" onsubmit="return false;">
+                <div class="newsletter-input-group">
+                  <input type="email" class="newsletter-input" placeholder="Email" />
+                  <span class="newsletter-icon"><i class="bi bi-envelope"></i></span>
+                </div>
+                <button type="submit" class="btn-signup-now">Sign Up Now</button>
+              </form>
+            </div>
+          </div>
+
+        </div><!-- /row -->
+      </div>
+    </div><!-- /footer-top -->
+
+    <div class="footer-bottom">
+      <div class="container-fluid px-5">
+        <p class="footer-copyright">Copyright &copy; 2018-2020. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer><!-- /FOOTER -->
+
+  </div><!-- /PAGE CONTENT WRAPPER -->
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc4s9bIOgUxi8T/jzmFXmuiCRLhcCRKBk7g+Y3eqCFT6"
+    crossorigin="anonymous"
+  ></script>
+
+</body>
+</html>
