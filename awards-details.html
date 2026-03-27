@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Social Books — Pavan Choudary" />
-  <title>Books – Social | Pavan Choudary</title>
+  <meta name="description" content="Awards — Pavan Choudary" />
+  <title>Awards | Pavan Choudary</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -24,6 +24,15 @@
 
   <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Awards page: images at natural width, no float */
+    .bl-post-body .bl-post-thumb {
+      width: auto;
+      max-width: auto;
+      float: none;
+      margin: 10px 0 0 0;
+    }
+  </style>
 </head>
 <body>
 
@@ -79,7 +88,7 @@
 
           <!-- BOOKS dropdown -->
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Books
             </a>
             <ul class="dropdown-menu site-dropdown">
@@ -113,7 +122,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="awards.html">Awards</a>
+            <a class="nav-link active" href="awards.html">Awards</a>
           </li>
         </ul>
       </div>
@@ -125,139 +134,109 @@
   <div class="page-content">
 
   <!-- =====================================================
-       BOOKS – SOCIAL PAGE
+       BLOG SOCIAL PAGE
        ===================================================== -->
-  <section class="bk-page-section">
+  <section class="blog-listing-section">
+    <div class="container-fluid px-0">
+      <div class="row g-0">
 
-    <!-- Page heading -->
-    <div class="bk-page-header">
-      <h1 class="bk-page-title">Social</h1>
-    </div>
+        <!-- ========================
+             MAIN CONTENT (LEFT)
+             ======================== -->
+        <div class="col-lg-8 blog-listing-main">
 
-    <!-- Books grid — 4 per row -->
-    <div class="bk-grid">
-
-      <!-- Row 1 -->
-      <div class="row g-4">
-
-        <!-- Book 1 -->
-        <div class="col-6 col-sm-4 col-md-3">
-          <div class="book-card">
-            <div class="book-cover-wrap">
-              <a href="book-details.html">
-                <img src="imgs/how-a-good-person-can-really-win-preview-360x570.jpg" alt="Broom &amp; Groom" class="book-cover" />
-              </a>
+          <!-- ---- Award 1 ---- -->
+          <article class="bl-post">
+            <h2 class="bl-post-title">
+              <a href="#">&ldquo;The Intellectual Icon&rdquo; Award by Fore &ndash; Top Rankers</a>
+            </h2>
+            <div class="bl-post-body">
+              <img src="imgs/speaker/pc-top-ranker-award.jpg" alt="The Intellectual Icon Award" class="bl-post-thumb" />
             </div>
-            <div class="book-info">
-              <h3 class="book-title"><a href="book-details.html" style="color:inherit; text-decoration:none;">How A Good Person Can Really Win</a></h3>
-              <p class="book-author">By <a href="#" class="book-author-link">Pavan Choudary</a></p>
-            </div>
+          </article>
+        
+
+
+          
+
+        </div><!-- /blog-listing-main -->
+
+        <!-- ========================
+             SIDEBAR (RIGHT)
+             ======================== -->
+        <aside class="col-lg-4 blog-listing-sidebar">
+
+          <!-- Search -->
+          <div class="bl-sidebar-widget">
+            <form class="bl-search-form" onsubmit="return false;">
+              <input type="search" class="bl-search-input" placeholder="Search this website" />
+              <button type="submit" class="bl-search-btn" aria-label="Search"><i class="bi bi-search"></i></button>
+            </form>
           </div>
-        </div>
+     <hr class="bl-divider" />
+          <!-- Recent Posts -->
+          <div class="bl-sidebar-widget">
+            <h3 class="bl-sidebar-title">Recent Posts</h3>
 
-        <!-- Book 2 -->
-        <div class="col-6 col-sm-4 col-md-3">
-          <div class="book-card">
-            <div class="book-cover-wrap">
-              <img src="imgs/confucius-social-wisdom.jpg" alt="Confucius Social Wisdom" class="book-cover" />
-            </div>
-            <div class="book-info">
-              <h3 class="book-title">Confucius Social Wisdom</h3>
-              <p class="book-author">By <a href="#" class="book-author-link">Pavan Choudary</a></p>
-            </div>
+            <ul class="bl-sidebar-list">
+              <li><a href="#">Japan–China Tensions: The Emerging Signals and Impact on India and US-India relations</a></li>
+              <li><a href="#">Why Cash Transfers Work: Lessons from Bihar and Beyond</a></li>
+              <li><a href="#">Trump, His Western Detractors, and the Shifting Overton Window</a></li>
+              <li><a href="#">Decoding of the trending meme: 'Mere Paas Modi Hai' (I have Modi on my Side)</a></li>
+              <li><a href="#">What BRICS and India Can Learn from the Bystander Effect</a></li>
+            </ul>
           </div>
-        </div>
 
-        <!-- Book 3 -->
-        <div class="col-6 col-sm-4 col-md-3">
-          <div class="book-card">
-            <div class="book-cover-wrap">
-              <img src="imgs/machiavelli-for-moral-people-360x570.jpg" alt="Uprising 2011" class="book-cover" />
-            </div>
-            <div class="book-info">
-              <h3 class="book-title">Machiavelli for Moral People</h3>
-              <p class="book-author">By <a href="#" class="book-author-link">Pavan Choudary</a></p>
-            </div>
+          <!-- Categories -->
+          <div class="bl-sidebar-widget">
+            <h3 class="bl-sidebar-title">Categories</h3>
+            <ul class="bl-sidebar-list">
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Books</a></li>
+              <li><a href="#">English</a></li>
+              <li><a href="#">tip-box</a></li>
+              <li><a href="#">NEWS &amp; MEDIA</a></li>
+              <li><a href="#">Political</a></li>
+              <li><a href="#">Social</a></li>
+              <li><a href="#">Spiritual</a></li>
+              <li><a href="#">Videos</a></li>
+            </ul>
           </div>
-        </div>
 
-        <!-- Book 4 -->
-        <div class="col-6 col-sm-4 col-md-3">
-          <div class="book-card">
-            <div class="book-cover-wrap">
-              <img src="imgs/lalbahadur.jpg" alt="Lal Bahadur Shastri" class="book-cover" />
-            </div>
-            <div class="book-info">
-              <h3 class="book-title">Lal Bahadur Shastri – Lessons in Leadership</h3>
-              <p class="book-author">By <a href="#" class="book-author-link">Pavan Choudary</a></p>
-            </div>
+          <!-- Archives -->
+          <div class="bl-sidebar-widget">
+            <h3 class="bl-sidebar-title">Archives</h3>
+            <ul class="bl-sidebar-list">
+              <li><a href="#">November 2025</a></li>
+              <li><a href="#">October 2025</a></li>
+              <li><a href="#">September 2025</a></li>
+              <li><a href="#">July 2025</a></li>
+              <li><a href="#">May 2025</a></li>
+              <li><a href="#">April 2025</a></li>
+              <li><a href="#">March 2025</a></li>
+              <li><a href="#">December 2024</a></li>
+              <li><a href="#">July 2024</a></li>
+              <li><a href="#">June 2023</a></li>
+              <li><a href="#">May 2023</a></li>
+              <li><a href="#">January 2023</a></li>
+              <li><a href="#">November 2022</a></li>
+              <li><a href="#">October 2022</a></li>
+              <li><a href="#">May 2019</a></li>
+              <li><a href="#">May 2018</a></li>
+              <li><a href="#">January 2018</a></li>
+              <li><a href="#">August 2017</a></li>
+              <li><a href="#">July 2017</a></li>
+              <li><a href="#">June 2017</a></li>
+              <li><a href="#">May 2014</a></li>
+              <li><a href="#">April 2014</a></li>
+            </ul>
           </div>
-        </div>
-            
-         <div class="col-6 col-sm-4 col-md-3">
-          <div class="book-card">
-            <div class="book-cover-wrap">
-              <img src="imgs/how-a-good-person-can-really-win-preview-360x570.jpg" alt="Broom &amp; Groom" class="book-cover" />
-            </div>
-            <div class="book-info">
-              <h3 class="book-title">How A Good Person Can Really Win</h3>
-              <p class="book-author">By <a href="#" class="book-author-link">Pavan Choudary</a></p>
-            </div>
-          </div>
-        </div>
 
-        <!-- Book 2 -->
-        <div class="col-6 col-sm-4 col-md-3">
-          <div class="book-card">
-            <div class="book-cover-wrap">
-              <img src="imgs/confucius-social-wisdom.jpg" alt="Confucius Social Wisdom" class="book-cover" />
-            </div>
-            <div class="book-info">
-              <h3 class="book-title">Confucius Social Wisdom</h3>
-              <p class="book-author">By <a href="#" class="book-author-link">Pavan Choudary</a></p>
-            </div>
-          </div>
-        </div>
+        </aside><!-- /sidebar -->
 
-        <!-- Book 3 -->
-        <div class="col-6 col-sm-4 col-md-3">
-          <div class="book-card">
-            <div class="book-cover-wrap">
-              <img src="imgs/machiavelli-for-moral-people-360x570.jpg" alt="Uprising 2011" class="book-cover" />
-            </div>
-            <div class="book-info">
-              <h3 class="book-title">Machiavelli for Moral People</h3>
-              <p class="book-author">By <a href="#" class="book-author-link">Pavan Choudary</a></p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Book 4 -->
-        <div class="col-6 col-sm-4 col-md-3">
-          <div class="book-card">
-            <div class="book-cover-wrap">
-              <img src="imgs/lalbahadur.jpg" alt="Lal Bahadur Shastri" class="book-cover" />
-            </div>
-            <div class="book-info">
-              <h3 class="book-title">Lal Bahadur Shastri – Lessons in Leadership</h3>
-              <p class="book-author">By <a href="#" class="book-author-link">Pavan Choudary</a></p>
-            </div>
-          </div>
-        </div>
-      </div><!-- /row 1 -->
-
-    </div><!-- /bk-grid -->
-
-    <!-- Pagination -->
-    <nav class="bk-pagination" aria-label="Books pagination">
-      <a href="#" class="bk-page-link bk-page-current">1</a>
-      <a href="#" class="bk-page-link">2</a>
-      <a href="#" class="bk-page-link">3</a>
-      <a href="#" class="bk-page-link">4</a>
-      <a href="#" class="bk-page-link bk-page-next">Next Page »</a>
-    </nav>
-
-  </section><!-- /BOOKS SOCIAL PAGE -->
+      </div><!-- /row -->
+    </div><!-- /container -->
+  </section>
 
   <!-- =====================================================
        FOOTER
