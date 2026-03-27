@@ -90,15 +90,16 @@ h1, h2, h3, h4, h5, h6 {
 p {
   font-family: var(--font-body);
   color: var(--color-text-muted);
-  font-size: 0.93rem;
+  font-size: 18px;
   line-height: 1.8;
+      text-align: justify;
 }
 
 /* -----------------------------------------------------------
    3b. PAGE CONTENT WRAPPER
    ----------------------------------------------------------- */
 .page-content {
-  margin: 0 100px;          /* same inset as navbar padding */
+  margin: 0 120px;          /* same inset as navbar padding */
   overflow: hidden;         /* clips child section corners */
 }
 
@@ -114,7 +115,7 @@ p {
 .site-navbar {
   background-color: var(--color-navbar-bg);
   height: var(--navbar-height);
-  padding: 40px 85px;
+  padding: 43px 109px;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -174,6 +175,7 @@ p {
 .site-navbar .navbar-nav .nav-link:hover::after,
 .site-navbar .navbar-nav .nav-link.active::after {
   transform: scaleX(1);
+  display: block;
 }
 
 /* Hide Bootstrap's default dropdown caret arrow */
@@ -185,6 +187,7 @@ p {
 .site-navbar .navbar-nav .dropdown.show > .nav-link::after,
 .site-navbar .navbar-nav .dropdown:hover > .nav-link::after {
   transform: scaleX(1);
+  display: block;
 }
 
 /* Show dropdown on hover (desktop) */
@@ -1253,7 +1256,8 @@ font-family: var(--font-heading);
 
 /* ---------- Main content column ---------- */
 .blog-listing-main {
-    padding: 34px 50px 4px 51px;
+padding: 20px 9px 6px 7px;
+/* padding: 53px 45px 6px 47px; */
   border-right: 1px solid #d0d8de;
   background: #fff;
 }
@@ -1265,7 +1269,7 @@ font-family: var(--font-heading);
   color: #111111;
   background: transparent;
   margin: 0 0 0 0 !important;
-  padding: 0 0 14px 0 !important;
+     padding: 0 0 14px 31px !important;
   border: none;
   border-bottom: 1px solid #e0e0e0;
   display: block;
@@ -1281,7 +1285,7 @@ font-family: var(--font-heading);
 
 .bl-post-title {
   font-family: var(--font-heading);
-  font-size: 1.55rem;
+  font-size: 2rem !important;
   font-weight: 900;
   line-height: 1.2;
   margin: 0 0 5px 0 !important;
@@ -1341,6 +1345,7 @@ font-family: var(--font-heading);
     font-weight: 300;
     line-height: 1.78;
     margin-bottom: 0;
+    text-align: justify;
 }
 
 .bl-read-more {
@@ -1445,8 +1450,8 @@ margin-bottom: 32px;
     text-transform: uppercase;
     color: #111111;
     margin-bottom: 14px;
-    padding-bottom: 17px;
-    border-bottom: none;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #111111;
 
 }
 
@@ -1575,4 +1580,297 @@ font-family: var(--font-body);
     margin-left: 8px;
     font-size: 20px;
     font-weight: 200;
+}
+
+/* ============================================================
+   BOOK DETAIL PAGE  (book-details.html)
+   ============================================================ */
+
+/* Sub-navigation tabs — inside .page-content; overflow:visible set per-page so sticky works */
+.bk-detail-subnav {
+  background: #e8eaec;
+  border-bottom: 2px solid #d0d2d4;
+  margin: 0 0px;           /* stretch to page-content edges (negate section padding) */
+  padding: 0px 0px;           /* re-add left padding so tabs align with content text */
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  position: sticky;
+  top: 64px;                 /* updated by JS to exact navbar height */
+  z-index: 999;
+}
+.bk-detail-subnav a {
+    display: flex;
+    align-items: center;
+    font-family: var(--font-heading);
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #423c3c;
+    text-decoration: none;
+    padding: 28px 34px;
+    border-right: 1px solid #acbec9;
+    white-space: nowrap;
+    line-height: 1;
+    transition: background 0.18s, color 0.18s;
+}
+.bk-detail-subnav a:first-child { border-left: 1px solid #d0d2d4; }
+.bk-detail-subnav a:hover { background: #d8dadc; color: #222; }
+.bk-detail-subnav a.active {
+  margin-left: auto;         /* push ALL BOOKS to far right */
+  background: #1a73e8;
+  color: #fff;
+  border-left: none;
+  border-right: none;
+  padding: 14px 36px;        /* wider horizontal padding for the blue pill */
+}
+
+/* Detail page wrapper */
+.bk-detail-section {
+  background: #fff;
+    padding: 52px 70px 0px 70px;
+  font-size: 0.875rem;
+  color: #333;
+  line-height: 1.75;
+}
+
+/* Two-column layout */
+.bk-detail-main {
+  padding-right: 40px;
+}
+.bk-detail-sidebar {
+  padding-left: 16px;
+  border-left: 1px solid #e0e0e0;
+}
+
+/* Title & author */
+.bk-detail-title {
+  font-family: var(--font-heading);
+  font-size: 38px;
+  font-weight: 900;
+  color: #111;
+  margin-bottom: 6px;
+  line-height: 1.2;
+}
+.bk-detail-author {
+  font-size: 0.82rem !important;
+  color: var(--color-primary);
+  margin-bottom: 18px;
+  font-family: var(--font-heading);
+}
+.bk-detail-author a { color: var(--color-primary); text-decoration: none; }
+.bk-detail-author a:hover { text-decoration: underline; }
+
+/* Body text */
+.bk-detail-body {
+  font-size: 0.875rem;
+  line-height: 1.75;
+  color: #333;
+}
+/* Override global p{font-size:18px} inside the book detail section */
+.bk-detail-section p,
+.bk-detail-section li {
+ font-size: 18px !important;
+  line-height: 1.75;
+  color: #333;
+}
+.bk-detail-body p { margin-bottom: 8px; color: #333; font-size: 0.875rem; }
+.bk-detail-body ol, .bk-detail-body ul {
+  padding-left: 22px;
+  margin-bottom: 10px;
+}
+.bk-detail-body li { margin-bottom: 3px; font-size: 0.875rem; color: #333; }
+
+/* Press clipping box */
+.bk-press-box {
+  border: 1px solid #c5d8ea;
+      padding: 41px;
+  margin: 18px 0;
+  background: #f5f9fd;
+  overflow: hidden;   /* contain float */
+}
+.bk-press-box-heading {
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 14px;
+  line-height: 1.4;
+}
+.bk-press-box img {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+  float: none;
+  margin: 0 0 12px 0;
+}
+.bk-press-box-article-title {
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: #111;
+  margin-bottom: 3px;
+}
+.bk-press-box-byline {
+  font-size: 0.75rem;
+  color: #666;
+  margin-bottom: 8px;
+}
+.bk-press-box-text {
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 5px;
+}
+
+/* Sample eBook / Contents */
+.bk-sample-heading {
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin: 22px 0 2px;
+}
+.bk-contents-heading {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #222;
+  margin-bottom: 8px;
+}
+.bk-part-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #222;
+  margin: 10px 0 3px;
+}
+.bk-contents-list {
+  list-style: decimal;
+  padding-left: 20px;
+  margin-bottom: 4px;
+  columns: 2;
+  column-gap: 18px;
+}
+.bk-contents-list li {
+  font-size: 0.75rem;
+  color: #444;
+  line-height: 1.5;
+  break-inside: avoid;
+}
+
+/* Reviews section */
+.bk-reviews-heading {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-primary);
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 6px;
+  margin: 24px 0 12px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+.bk-write-review-btn {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #333;
+  border: 1px solid #aaa;
+  padding: 4px 12px;
+  text-decoration: none;
+  margin-bottom: 14px;
+  transition: background 0.2s, color 0.2s;
+}
+.bk-write-review-btn:hover { background: #333; color: #fff; }
+.bk-review-meta {
+  font-size: 0.72rem;
+  color: #666;
+  margin-bottom: 2px;
+}
+.bk-review-meta strong { color: #222; }
+.bk-review-stars { color: #f4a01c; font-size: 0.78rem; }
+.bk-review-text {
+  font-size: 0.75rem;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+.bk-review-text a { color: var(--color-primary); }
+.bk-reviews-showing {
+  font-size: 15px;
+  color: #888;
+}
+.bk-review-item {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+/* Sidebar */
+.bk-detail-sidebar .bk-cover-img {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto 10px;
+  display: block;
+}
+.bk-price {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #222;
+  text-align: center;
+  margin-bottom: 14px;
+  margin-top: 6px;
+}
+.bk-publisher-info {
+  font-size: 0.82rem;
+  color: #333;
+  margin-bottom: 14px;
+  line-height: 2;
+}
+.bk-publisher-info p { font-size: 0.82rem; color: #333; margin-bottom: 2px; }
+.bk-publisher-info strong { color: #222; }
+.bk-buy-btn {
+  display: block;
+  width: 100%;
+  font-size: 0.78rem;
+  font-weight: 400;
+  text-align: center;
+  color: #333;
+  border: 1px solid #bbb;
+  padding: 7px 10px;
+  text-decoration: none;
+  margin-bottom: 7px;
+  background: #fff;
+  transition: background 0.2s, color 0.2s;
+  letter-spacing: 0.3px;
+}
+.bk-buy-btn:hover { background: #1a2535; color: #fff; border-color: #1a2535; }
+
+@media (max-width: 991px) {
+  .bk-detail-main { padding-right: 0; }
+  .bk-detail-sidebar { padding-left: 0; border-left: none; border-top: 1px solid #e8e8e8; margin-top: 28px; padding-top: 20px; }
+  .bk-detail-subnav { margin: 0 -14px; padding: 0 14px; flex-wrap: wrap; }
+  .bk-detail-section { padding: 20px 14px 40px; }
+  .bk-contents-list { columns: 1; }
+}
+@media (max-width: 575.98px) {
+  .bk-detail-subnav { margin: 0 -12px; padding: 0; }
+}
+.dropdown-toggle::after
+ {
+    display: inline-block;
+    margin-left: .255em;
+    vertical-align: .255em;
+    content: "";
+    border-top: solid;
+    border-right:  solid transparent;
+    border-bottom: 0;
+    border-left:  solid transparent;
 }
